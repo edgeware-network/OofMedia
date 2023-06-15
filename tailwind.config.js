@@ -9,7 +9,16 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+        epilogue: ['Epilogue', 'sans-serif'],
+      },
+
+      colors:{
+        oofmedia: '#14ffec'
+      }
+    },
   },
   plugins: [
     require("daisyui"),
