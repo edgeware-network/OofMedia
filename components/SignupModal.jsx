@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { OofMediaContext } from '../context/OofMediaProvider';
 import { HashtagIcon } from '@heroicons/react/24/solid';
 
 const SignupModal = ({ isVisible, onClose }) => {
 
-  const [username, setUsername] = useState("");
+  const { username, setUsername, createAccount } = useContext(OofMediaContext);
 
   if (!isVisible) return null;
 
@@ -13,8 +14,11 @@ const SignupModal = ({ isVisible, onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("username", username);
+    if(username !== ""){
+      createAccount(username);
+    }
     setUsername("");
+    // handleClose(e);
   }
 
   return (
@@ -29,7 +33,7 @@ const SignupModal = ({ isVisible, onClose }) => {
             <span className='text-xs font-epilogue font-thin text-gray-600'>set username</span>
             <input required type='text' value={username} onChange={e => setUsername(e.target.value)} placeholder='username' className='rounded-[3px] bg-black outline outline-1 outline-offset-1 outline-gray-800 font-poppins p-3.5 m-0.5'/>
           </div>
-          <button type="submit" className='btn btn-wide font-poppins bg-[#0d7377] text-white hover:bg-[rgba(13,115,119,0.5)]'>Sign</button>
+          <button type="submit" className='btn btn-wide font-poppins bg-[#0d7377] text-white hover:bg-[rgba(13,115,119,0.5)]'>Register</button>
         </form>
         <button onClick={handleClose} id="signup" className='btn btn-wide btn-outline hover:bg-transparent font-poppins border-[#0d7377] hover:border-[#0d7377] hover:text-white'>Cancel</button>
       </div>

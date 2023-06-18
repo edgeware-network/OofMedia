@@ -1,7 +1,11 @@
 import { HashtagIcon } from '@heroicons/react/24/solid';
-import React from 'react'
+import React, { useContext } from 'react';
+import { OofMediaContext } from '../context/OofMediaProvider';
+
 
 const CustomModal = ({ isVisible, onClose }) => {
+  const { logout } = useContext(OofMediaContext);
+
   if (!isVisible) return null;
 
   const handleClose = (e) => {
@@ -14,7 +18,7 @@ const CustomModal = ({ isVisible, onClose }) => {
         <HashtagIcon className='h-10 w-10 text-[#0D7377]' />
         <h1 className='font-epilogue text-xl font-bold'>Log out of OofMedia?</h1>
         <p className='font-epilogue text-sm text-gray-600'>You can always log back in at any time.</p>
-        <button className='btn btn-wide font-poppins bg-[#0d7377] text-white hover:bg-[rgba(13,115,119,0.5)]'>Logout</button>
+        <button onClick={logout} className='btn btn-wide font-poppins bg-[#0d7377] text-white hover:bg-[rgba(13,115,119,0.5)]'>Logout</button>
         <button onClick={handleClose} id="close" className='btn btn-wide font-poppins btn-outline hover:bg-transparent border-[#0d7377] hover:border-[#0d7377] hover:text-white'>Cancel</button>
       </div>
     </div>
