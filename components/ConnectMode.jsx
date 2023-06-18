@@ -8,7 +8,7 @@ const ConnectMode = () => {
         setIsVideoSelected(!isVideoSelected);
     }
     return (
-        <div className="flex justify-center bg-green-700 rounded-lg">
+        <div className="flex outline outline-1 w-full justify-center bg-[#0d7377] rounded-lg p-4">
             <form className="mt-2 mb-2">
                 <div className="flex items-center">
                     <label htmlFor="toggle" className="block mr-2 text-lg ">Toggle Name: </label>
@@ -25,7 +25,7 @@ const ConnectMode = () => {
                 </div>
                 <div className="mt-4">
                     <label htmlFor="keywords" className="text-lg  mr-2">Keywords:</label>
-                    <input type="text" id="keywords" placeholder="Enter Keywords"  style={{fontFamily:"Poppins,sans-serif"}} className="mt-1 bg-gray-300 text-sm text-zinc-900 rounded-md shadow-sm 
+                    <input type="text" id="keywords" placeholder="Enter Keywords"  style={{fontFamily:"Poppins,sans-serif"}} className="mt-1 bg-gray-300 text-sm p-2 text-zinc-900 rounded-md shadow-sm 
                 focus:ring-indigo-500 focus:border-indigo-500"></input>
                 </div>
                 <div className="mt-4  flex">

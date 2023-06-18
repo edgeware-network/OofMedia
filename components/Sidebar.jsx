@@ -16,7 +16,7 @@ import CustomModal from './CustomModal';
 const Sidebar = () => {
   const [modal, setModal] = useState(false);
   return (
-    <div className='flex flex-col col-span-2 items-center md:items-start px-4 m-2 justify-between place-content-between bg-[#191919] outline outline-offset-0 outline-1 outline-gray-800 rounded-box'>
+    <div className='flex flex-col col-span-2 items-center md:items-start px-4 m-2 justify-between place-content-between bg-[#191919] outline outline-offset-0 outline-1 outline-gray-800 rounded-box min-h-screen'>
       <div className='flex flex-row justify-between m-3 cursor-pointer space-x-2'>
         <HashtagIcon className='h-7 w-7 text-[#0D7377]' />
         <h1 className='font-poppins hidden md:inline-flex font-bold text-xl'>Oofed</h1>

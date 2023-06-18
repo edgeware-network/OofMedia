@@ -8,7 +8,7 @@ const Logs = ({ tabs,tabContent, defaultTab }) => {
   };
 
   return (
-    <div>
+    <div className='flex w-full flex-col justify-center outline outline-1 rounded-lg mt-2'>
       <div className="tab-switcher">
         {tabs.map((tab) => (
           <div
@@ -20,7 +20,7 @@ const Logs = ({ tabs,tabContent, defaultTab }) => {
           </div>
         ))}
       </div>
-      <div className="tab-content font-poppins">
+      <div className="tab-content rounded-none font-poppins">
         {tabs.map((tab, index) => (
           <div
             key={tab}
@@ -36,10 +36,12 @@ const Logs = ({ tabs,tabContent, defaultTab }) => {
           cursor: pointer;
           background-color: grey;
           color: white;
+          border-radius: 0.5rem;
         }
 
         .active {
           background-color: #0d7377;
+          border-radius: 0.5rem;
         }
 
         .tab-pane {
